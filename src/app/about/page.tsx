@@ -12,6 +12,11 @@ import {
   Phone,
 } from "lucide-react";
 
+export const metadata: Metadata = {
+  title: "About",
+  description: "Education, core strengths, and background of Vignesh N, AI & Data Science student at SRM TRP Engineering College.",
+};
+
 const timeline = [
   {
     year: "2022",
@@ -67,11 +72,12 @@ export default function AboutPage() {
         <aside className="h-fit rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
           <div className="mx-auto relative h-28 w-28 rounded-full overflow-hidden ring-4 ring-blue-100">
             <Image
-              src="/images/profile.jpeg"
+src="/images/profile-1.jpeg"
               alt="Vignesh N"
               fill
               sizes="(max-width: 640px) 112px, 112px"
               className="object-cover"
+              loading="eager"
             />
           </div>
           {/* DROP YOUR PHOTO: Add profile.jpeg to /public/images/profile.jpeg */}

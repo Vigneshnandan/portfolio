@@ -1,20 +1,17 @@
-import Link from "next/link";
-import { Download, FileText, ExternalLink, Calendar } from "lucide-react";
+import type { Metadata } from "next";
+import { Download, FileText, ExternalLink } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
+import { projects } from "@/data/projects";
+import { hackathons } from "@/data/hackathons";
 
-const projects = [
-  { id: 1, name: "Nexus — AI Recruiter Platform", stack: "TypeScript · Next.js · Supabase · Groq", desc: "Anti-hallucination ATS that reads candidates' actual GitHub codebases via LLM evaluation. Features a dual-metric Trust Score engine and smart leaderboard ranking for automated candidate screening.", github: "https://github.com/Vigneshnandan/ai-recruiter-platform" },
-  { id: 2, name: "HireVerse — DSA Evaluation Module", stack: "Python · FastAPI · PostgreSQL · Groq", desc: "Full-stack DSA preparation platform with AI-powered code evaluation, complexity analysis, and automated follow-up interview questions.", github: "https://github.com/vishallr821/hireverse-final" },
-  { id: 3, name: "EduVision — On-Device Face Recognition", stack: "Kotlin · TFLite · ObjectBox · Supabase", desc: "Offline-first Android app using FaceNet (TFLite) for on-device face recognition with HNSW vector search via ObjectBox.", github: "https://github.com/vishallr821/eduvision-final" },
-  { id: 4, name: "Resume Parser", stack: "Python · HTML", desc: "Extracts and structures key candidate information from uploaded PDFs with a clean HTML frontend.", github: "https://github.com/Vigneshnandan/resume-parser" },
-  { id: 5, name: "HireVerse DSA Practice", stack: "Python", desc: "DSA preparation platform implementing core algorithmic patterns and problem-solving concepts.", github: "https://github.com/Vigneshnandan/hireverse-dsa" },
-];
+export const metadata: Metadata = {
+  title: "Resume",
+  description: "View or download Vignesh N's resume — education, projects, skills, and hackathon highlights.",
+};
 
-const hackathons = [
-  { emoji: "🥈", place: "2nd Place", event: "HackWithMagnus 2026", venue: "CIT College", year: "2026" },
-  { emoji: "🥉", place: "3rd Place", event: "SRM TRP Ideathon 2025", venue: "SRM TRP Engineering College", year: "2025" },
-  { emoji: "🏁", place: "Participant", event: "HACK-SPRINT 2026", venue: "SRM TRP Engineering College", year: "2026" },
-];
+const resumeProjectIds = [1, 4, 5, 12, 13];
+const resumeProjects = projects.filter((project) => resumeProjectIds.includes(project.id));
+const resumeHackathons = hackathons.filter((hackathon) => hackathon.place.includes("Place") || hackathon.event.includes("HACK-SPRINT"));
 
 export default function ResumePage() {
   return (
@@ -98,7 +95,7 @@ export default function ResumePage() {
             <div className="rounded-2xl border-b border-slate-100 pb-6">
               <h3 className="text-lg font-bold text-slate-900">Projects</h3>
               <div className="mt-4 space-y-4">
-                {projects.map((p) => (
+                {resumeProjects.map((p) => (
                   <div key={p.id} className="space-y-1">
                     <div className="flex items-center justify-between">
                       <div>
@@ -130,7 +127,7 @@ export default function ResumePage() {
             <div>
               <h3 className="text-lg font-bold text-slate-900">Hackathons</h3>
               <div className="mt-4 grid gap-3">
-                {hackathons.map((h) => (
+                {resumeHackathons.map((h) => (
                   <div key={h.event} className="rounded-2xl border border-slate-200 bg-white p-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">

@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
   --background: #f8fafc;
   --foreground: #0f172a;
+}
+
+:root[data-theme="dark"] {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
 }
 
 @theme inline {
@@ -13,7 +20,7 @@
 }
 
 body {
-  background-color: #f8fafc;
+  background-color: var(--background);
   color: var(--foreground);
   font-family: 'Inter', sans-serif;
 }

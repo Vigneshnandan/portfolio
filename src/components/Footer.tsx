@@ -4,6 +4,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
+  { label: "Hackathons", href: "/hackathons" },
   { label: "Skills", href: "/skills" },
   { label: "Certifications", href: "/certifications" },
   { label: "Resume", href: "/resume" },
@@ -63,7 +64,7 @@ export default function Footer() {
                 fill="currentColor"
                 aria-hidden="true"
               >
-                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 .5 1 4.98 2.12 4.98 3.5ZM.5 8.5h4V23h-4zM8.5 8.5h3.84v2h.05c.54-1.02 1.87-2.1 3.86-2.1 4.13 0 4.89 2.72 4.89 6.26V23h-4v-6.7c0-1.6-.03-3.66-2.23-3.66-2.24 0-2.58 1.75-2.58 3.55V23h-3.83V8.5z" />
+                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8.5h4V23h-4zM8.5 8.5h3.84v2h.05c.54-1.02 1.87-2.1 3.86-2.1 4.13 0 4.89 2.72 4.89 6.26V23h-4v-6.7c0-1.6-.03-3.66-2.23-3.66-2.24 0-2.58 1.75-2.58 3.55V23h-3.83V8.5z" />
               </svg>
               LinkedIn
             </a>
